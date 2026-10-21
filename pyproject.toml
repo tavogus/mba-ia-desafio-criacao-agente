@@ -1,0 +1,27 @@
+[project]
+name = "residencial-aurora"
+version = "0.1.0"
+description = "Assistente do Residencial Aurora, com regras do condomínio garantidas em código."
+authors = [
+    { name = "gustavo becker", email = "gustavobesantanna@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "aiosqlite>=0.21",
+    "fastapi>=0.115",
+    "google-adk==2.12.0",
+    "python-dotenv>=1.0",
+    "uvicorn>=0.34",
+]
+
+[project.scripts]
+aurora = "residencial_aurora.api:main"
+restaurar = "residencial_aurora.restaurar:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "residencial_aurora"
+module-root = "src"
